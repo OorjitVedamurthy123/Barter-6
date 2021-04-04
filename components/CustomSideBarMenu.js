@@ -1,4 +1,4 @@
-import Recat, {Component} from 'react'
+import React, {Component} from 'react'
 import {View, Text, TouchableOpacity} from 'react-native'
 import {DrawerItems} from 'react-navigation-drawer'
 import firebase from 'firebase'

@@ -18,10 +18,10 @@ export default class SettingsScreen extends Component{
 
   getUserDetails=()=>{
     var userName = firebase.auth().currentUser.email;
-    db.collection('users').where('username','==',userName).get()
-    .then(snapshot => {
-      snapshot.forEach(doc => {
-      var data = doc.data()
+    db.collection('users').where('username','==',userName) .get()
+    .then((snapshot) => {
+      snapshot.forEach((doc) => {
+        var data = doc.data()
         this.setState({
           userName  : data.username,
           firstName : data.first_name,
@@ -35,7 +35,7 @@ export default class SettingsScreen extends Component{
   }
 
   updateUserDetails=()=>{
-    db.collection('users').doc(this.state.docId)
+    db.collection("users").doc(this.state.docId)
     .update({
       "first_name": this.state.firstName,
       "last_name" : this.state.lastName,
