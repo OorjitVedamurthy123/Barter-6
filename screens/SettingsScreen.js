@@ -18,8 +18,7 @@ export default class SettingsScreen extends Component{
 
   getUserDetails=()=>{
     var userName = firebase.auth().currentUser.email;
-    db.collection('users').where('username','==',userName) .get()
-    .then((snapshot) => {
+    db.collection('users').where('username','==',userName).get().then((snapshot) => {
       snapshot.forEach((doc) => {
         var data = doc.data()
         this.setState({
@@ -58,7 +57,7 @@ export default class SettingsScreen extends Component{
             <TextInput
               style={styles.formTextInput}
               placeholder ={"First Name"}
-              maxLength ={8}
+              maxLength ={12}
               onChangeText={(text)=>{
                 this.setState({
                   firstName: text
@@ -69,7 +68,7 @@ export default class SettingsScreen extends Component{
             <TextInput
               style={styles.formTextInput}
               placeholder ={"Last Name"}
-              maxLength ={8}
+              maxLength ={16}
               onChangeText={(text)=>{
                 this.setState({
                   lastName: text

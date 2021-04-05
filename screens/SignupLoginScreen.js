@@ -33,7 +33,7 @@ export default class SignupLoginScreen extends Component{
         username:this.state.userName,
         address:this.state.address
       })
-      return Alert.alert("Added successfully",
+      return Alert.alert("User Added successfully",
       '',
       [
         {text:'OK', onPress:()=>this.setState({isVisible:false})}
@@ -70,7 +70,7 @@ export default class SignupLoginScreen extends Component{
       <TextInput
         style={styles.formTextInput}
         placeholder={"First Name"}
-        maxLength={8}
+        maxLength={12}
         onChangeText={(text)=>{
           this.setState({
             firstName:text
@@ -80,7 +80,7 @@ export default class SignupLoginScreen extends Component{
         <TextInput
         style={styles.formTextInput}
         placeholder={"Last Name"}
-        maxLength={10}
+        maxLength={16}
         onChangeText={(text)=>{
           this.setState({
             lastName:text
